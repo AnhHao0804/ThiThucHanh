@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function soNguyenTo(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+
+            if (num % 2 === 0 || num % 3 === 0) return false;
+
+            for (let i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+
+            return true;
+        }
+
+        function timVaSapXep(arr) {
+            let soNguyen = arr.filter(soNguyenTo);
+            soNguyen.sort((a, b) => a - b);
+            return soNguyen;
+        }
+        let arr = [1,5,6,23,8,47,10,3];
+        let sortedPrimes = timVaSapXep(arr);
+        document.write(sortedPrimes);
+
+    </script>
+</body>
+</html>

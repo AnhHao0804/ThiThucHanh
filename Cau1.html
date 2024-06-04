@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let n = +prompt('Nhập số nguyên: ');
+        let tongChan = 0;
+        let tongLe = 0;
+        let sum = 0;
+        let arr = [];
+        for (i = 0; i <= n; i++){
+            arr.push(i);
+            if (i % 2 == 0){
+                tongChan += i;
+            }
+            if (i % 2 !== 0){
+                tongLe += i;
+            }
+            document.write(arr[i]);
+            sum = tongChan - tongLe;
+        }
+        document.write('<br>'+ 'Tổng: ' + sum);
+    </script>
+
+</body>
+</html>

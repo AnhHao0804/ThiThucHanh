@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    class mobilePhone {
+          constructor(id,name,fact,price) {
+              this._id = id;
+              this._name = name;
+              this._fact = fact;
+              this._price = price;
+          }
+
+          get _id(){
+                return this.id;
+          }
+          set _id(newID){
+                this.id = newID;
+          }
+
+          get _name(){
+                return this.name;
+          }
+          set _name(newName){
+                this.name = newName;
+          }
+
+          get _fact(){
+                return this.fact;
+          }
+          set _fact(newFact){
+                this.fact = newFact;
+          }
+
+          get _price(){
+                return this.price;
+          }
+          set _price(newPrice){
+                this.price = newPrice;
+          }
+        toString() {
+            return `Mã điện thoại: ${this.id}, Tên: ${this.name}, Hãng sản xuất: ${this.fact}, Giá: ${this.price}`;
+        }
+    }
+    class PhoneManager {
+        constructor() {
+            this.phones = [];
+        }
+
+        addPhone(phone) {
+            this.phones.push(phone);
+        }
+
+        showSortedPhones() {
+            const sortedPhones = [...this.phones].sort((a, b) => a.name.localeCompare(b.name));
+            sortedPhones.forEach(phone => console.log(phone.toString()));
+        }
+    }
+    const phoneManager = new PhoneManager()
+    phoneManager.addPhone(new mobilePhone("001", "iPhone 12", "Apple", 12000000));
+    phoneManager.addPhone(new mobilePhone("002", "Galaxy S21", "Samsung", 15000000));
+    phoneManager.addPhone(new mobilePhone("003", "Xperia 5 III", "Sony", 10000000));
+    console.log("Danh sách điện thoại đã được sắp xếp theo tên:");
+    phoneManager.showSortedPhones();
+  </script>
+
+</body>
+</html>
